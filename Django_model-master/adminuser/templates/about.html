@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table border="3">
+
+     <tr>
+       <th>abid</th>
+        <th>abname</th>
+        <th>abemail</th>
+        <th>abres</th>
+    </tr>
+    {% for i in data3 %}
+    <tr>
+       <td>{{i.abid}}</td>
+        <td>{{i.abname}}</td>
+        <td>{{i.abemail}}</td>
+        <td>{{i.abres}}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+</body>
+</html>

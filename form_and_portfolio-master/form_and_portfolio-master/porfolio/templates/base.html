@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link href="{% static 'css/css.css'%}" rel="stylesheet">
+
+</head>
+<body style="background-image: url('./static/img/back.png');">
+
+<nav class="navbar navbar-expand-sm navbar-dark nav_color">
+  <a class="navbar-brand" href="{% url 'home' %}">
+    <img src="{% static 'img/k.png' %}" alt="logo" class="logo">
+    <span style="font-size:30px">Vinod Portfolio</span>
+
+  </a><br>
+
+  <ul class="navbar-nav" >
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'home' %}"><h4>Home</h4></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'about' %}"><h4>About</h4></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'skills' %}"><h4>Skills</h4></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'resume' %}"><h4>Resume</h4></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'contact' %}"><h4>Contact</h4></a>
+    </li>
+    <li class="nav-item dropdown">
+       <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+         <h4>Clients</h4>
+       </a>
+       <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color:#69B220;">
+         <a class="dropdown-item" href="https://www.ibm.com" >IBM</a>
+         <a class="dropdown-item" href="https://www.cognizant.com">Cognizant</a>
+         <div class="dropdown-divider"></div>
+         <a class="dropdown-item" href="https://www.tcs.com">TCS</a>
+       </div>
+     </li>
+  </ul>
+</nav>
+
+
+
+</body>
+{% block content %}
+{% endblock %}
+</html>

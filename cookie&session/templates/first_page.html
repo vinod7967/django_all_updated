@@ -1,0 +1,28 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+        body {
+            background-image: url({% static 'images/film.jpg' %});
+            background-size: 99.9%;
+        }
+    </style>
+</head>
+<body>
+    <!-- Image and text -->
+<nav class="navbar navbar-grey  bg-grey">
+    <a class="navbar-brand" href="#" style="color: rgb(250, 243, 233); font-family: 'Comic Sans MS';font-size: 30px;">
+     <b>QuicKBooK</b> 
+    </a>
+  </nav>
+<center><h2 style = 'font-family: "Comic Sans MS"; color: rgb(218, 212, 205); font-size: 45px;'><b>Time2Book Entertainer+</b></h2></center>
+
+<div class="buttons" style="text-align: center;">
+  <div style="width: 750px; margin: 85px auto;"><button onclick="document.location.href='/login';" style="color: rgb(176, 204, 97);" class="close">Sign In</button>
+  <button onclick="document.location.href='/signup';" style = 'margin-right: 50px; color: rgb(176, 204, 97) ;' class="close">Sign Up</button> </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,16 @@
+
+
+{% extends 'base.html' %}
+
+{% block content%}
+<div class="" style="background-color: #c10d32;width: 40%;margin-left: 30%;padding: 30px;border-radius: 30px;margin-top: 5;background-color: red%">
+    <h2 style="text-align: center">Update Donor Details</h2>
+    <form action="" method="POST">
+        {% csrf_token %}
+        <table>{{ form }}</table>
+        <button type="submit" class="btn btn-success" style="margin-left: 130px;background-color: white;color: black">Update</button>
+    </form>
+</div>
+{% endblock %}
+
+

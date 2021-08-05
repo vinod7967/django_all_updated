@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <table border="2">
+        <tr>
+            <th>name</th>
+            <th>deptname</th>
+        </tr>
+        {% for i in dept %}
+            <td>{{i.name}}</td>
+            <td>{{i.deptname}}</td>
+        {% endfor %}
+    </table>
+    <table border="2">
+        <tr>
+            <th>name</th>
+            <th>age</th>
+            <th>sal</th>
+        </tr>
+
+        {% for i in emp %}
+            <tr>
+            <td>{{i.name}}</td>
+            <td>{{i.age}}</td>
+            <td>{{i.sal}}</td>
+                </tr>
+        {% endfor %}
+    </table>
+    <table border="2">
+        <tr>
+            <th>name</th>
+            <th>age</th>
+        </tr>
+        {% for i in mul_info %}
+            <tr>
+            <td>{{i.name}}</td>
+            <td>{{i.age}}</td>
+                </tr>
+        {% endfor %}
+    </table>
+<table border="2">
+    <tr>
+        <th>name</th>
+        <th>age</th>
+        <th>salary</th>
+    </tr>
+    {% for i in ano_table %}
+        <td>{{i.name}}</td>
+        <td>{{i.age}}</td>
+        <td>{{i.salary}}</td>
+    {% endfor %}
+</table>
+  <table border="2">
+        <tr>
+            <th>name</th>
+            <th>age</th>
+        </tr>
+        {% for i in proyx_info %}
+            <tr>
+            <td>{{i.name}}</td>
+            <td>{{i.age}}</td>
+                </tr>
+        {% endfor %}
+    </table>
+  <table border="2">
+        <tr>
+            <th>name</th>
+            <th>age</th>
+        </tr>
+        {% for i in stu %}
+            <tr>
+            <td>{{i.name}}</td>
+            <td>{{i.age}}</td>
+                </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

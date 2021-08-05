@@ -1,0 +1,25 @@
+{% extends 'base.html'%}
+
+{% block content%}
+<form action="" class="sign-form" method="POST" style="background-color: #c10d32;width: 20%;margin-left: 30%;padding: 30px;border-radius: 30px;margin-top: 5;background-color: red%">
+    {% csrf_token %}
+
+    {% if form.non_field_errors %}
+    {% for error in form.non_field_errors %}
+        <p class="er">{{error}}</p>
+        {% endfor %}
+    {% endif %}
+    <h1></h1>
+    {% for fm in form %}
+        {{fm.label_tag}} <br>{{fm}} {{fm.errors|striptags}} <br><br>
+    {% endfor %}
+    <input type="submit" value="Register" style="border-radius: 20px;width: 180px;height: 30px;background-color: #ec7676 "><br><br>
+    <a class="btn btn-default" href="{%url 'login'%}" style="border-radius: 20px;width: 180px;height: 30px;background-color: #ec7676 "><b>Home</b></a>
+</form>
+
+    {% if messages %}
+        {% for message in messages %}
+            <small {% if message.tags %} class="{{message.tags}}"  {% endif %}>{{message}}</small>
+        {% endfor %}
+    {% endif %}
+{% endblock%}

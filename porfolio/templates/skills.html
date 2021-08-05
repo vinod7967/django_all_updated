@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+    p{
+        color: white;
+        margin-left: 160px;
+    }
+* {box-sizing: border-box}
+
+.container {
+  width: 100%;
+  background-color: #ddd;
+}
+
+.skills {
+  text-align: right;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: white;
+}
+
+.html {width: 90%; background-color: #04AA6D;}
+.css {width: 80%; background-color: #2196F3;}
+.js {width: 65%; background-color: #f44336;}
+.php {width: 60%; background-color: #808080;}
+.python {width: 80%; background-color: #808080;}
+.sql {width: 70%; background-color: #20A7B2;}
+</style>
+</head>
+<body>
+
+<h1 style="color: white;margin-left: 160px">My Skills</h1>
+
+<p>HTML</p>
+<div class="container">
+  <div class="skills html">90%</div>
+</div><br>
+
+<p>CSS</p>
+<div class="container">
+  <div class="skills css">80%</div>
+</div><br>
+
+<p>JavaScript</p>
+<div class="container">
+  <div class="skills js">65%</div>
+</div><br>
+
+<p>Python</p>
+<div class="container">
+  <div class="skills python">80%</div>
+</div>
+<p>Sql</p>
+<div class="container">
+  <div class="skills sql">70%</div>
+</div>
+
+</body>
+</html>
+{% endblock %}

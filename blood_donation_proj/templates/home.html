@@ -1,0 +1,49 @@
+{%extends 'base.html'%}
+{% load static %}
+{% block content%}
+
+<div class="row">
+
+<div class="col-md-4">
+
+<form action="" method="POST" style="background-color: #c10d32;border-radius: 30px;padding: 20px;margin-top: 5%">
+    {% csrf_token %}
+    <h3 style="text-align: center;color: white">Donor Registration</h3>
+    <table>
+        {{ form }}
+    </table>
+    <input type="submit" style="margin-left: 130px">
+</form>
+</div>
+<div class = 'col-md-6' style="background-color: #c10d32;border-radius: 30px;margin-top: 2%">
+    <h3 style="color: white">Donor Details</h3>
+{% if details %}
+    <table class="table table-hover" style="color: whitesmoke ">
+    <tr style="color: black">
+        <th>name</th>
+        <th>age</th>
+        <th>bd_gr</th>
+        <th>gender</th>
+        <th>address</th>
+    </tr>
+    {% for i in details %}
+       <tr>
+           <td><a href="update/{{ i.id }}" style="color: whitesmoke">{{ i.name }}</a></td>
+           <td>{{ i.age }}</td>
+           <td>{{ i.blood_group }}</td>
+           <td>{{ i.gender }}</td>
+           <td>{{ i.address }}</td>
+           <td><a class="btn btn-danger" href="delete/{{ i.pk }}">DELETE</a></td>
+           <td><a class="btn btn-success btm-sm text-white" href='update/{{ i.pk }}'>EDIT</a></td>
+        </tr>
+    {% endfor %}
+    </table>
+{% else %}
+<h1>No Records</h1>
+{% endif %}
+</div>
+    <div class="col-md-2">
+        <a class="btn btn-danger" href="logout">Logout</a>
+    </div>
+</div>
+{% endblock%}

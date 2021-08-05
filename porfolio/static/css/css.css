@@ -1,0 +1,30 @@
+body{
+  background-image: url('');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.nav_color{
+  background-color: #0A3E93;
+  height: 70px;
+  font-family: font-family: "Jost", sans-serif;;
+}
+.size_drop{
+  font-size: 25px;
+}
+.navbar-nav {
+            margin-left: 500px;
+        }
+.logo{
+  width:50px;
+  height:50px;
+  border-radius:50px
+}
+.drop{
+background-color:#69B220;
+}
+.hero{
+  margin-top:100px;
+  height:500px;
+  width:500px;
+  border-radius:500px;
+}

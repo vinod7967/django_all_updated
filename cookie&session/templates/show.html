@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ticket Booking</title>
+    <style>
+    body {
+        background-image: url({% static 'images/pic.jpg' %});
+        background-size: 99.9%;
+        font-family: cursive;
+    }
+    table, th, td {
+        border: 2px solid black;
+        border-collapse: collapse;
+    
+    }
+    td {
+        padding: 5px;
+        text-align:center;
+        
+    }
+    .btn {
+        background-color: #31ace6; /* Green */
+        border: none;
+        color: white;
+        padding: 10px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 15px;
+    }
+    </style>
+</head>
+
+<body>
+    <h1 style="font-family: cursive; color: antiquewhite; text-align: center;">Entertainment to your doorstep now!</h1>
+    <form action="" method="POST">
+        {% csrf_token %}
+        <div style="width: 100%; display: table;">
+            <div style="display: table-row">
+                <div style="width: 600px; display: table-cell;"> 
+                <div>
+                    <label for="">Total Tickets: {{total}}</label>
+                </div>
+                <div>
+                    <label for="">Available Tickets: {{remain}}</label>
+                </div>
+                <div>
+                    <label for="">Booked Tickets: {{booked}}</label>
+                </div>
+                
+                </div>
+                <div style="display: table-cell;">
+                    {{form.as_p}}
+                    <input type="submit" value="submit">
+                </div>
+            </div>
+        </div>
+        </form>
+        <div>
+            <center><table style = 'margin-top: 30px;'>  
+                <thead class="thead-dark">  
+                <tr>  
+                    <th>Name</th>  
+                    <th>Email</th>  
+                    <th>Movie Name</th>  
+                    <th>Ticket Number</th>  
+                    <th>Quantity</th>
+                    <th>Operations</th>
+                </tr>  
+                </thead>  
+                <tbody>  
+            {% for data in book %}  
+                <tr>  
+                    <td>{{ data.name }}</td>  
+                    <td>{{ data.email }}</td>  
+                    <td>{{ data.movie_name }}</td>  
+                    <td>{{ data.ticket_no }}</td>
+                    <td>{{ data.no_of_tickets }}</td>
+                    <td>  
+                        <a href="/edit/{{ data.id }}" class="btn">Edit</a>  
+                        <a href="/delete/{{ data.id }}" class="btn">Delete</a>  
+                    </td>  
+                </tr>  
+            {% endfor %}  
+                </tbody>  
+            </table>  </center>
+        </div>
+    {% comment %} <a href="{% url 'logout' %}">Logout</a> {% endcomment %}
+    <center><button onclick="document.location.href='/logout';" style="color: rgb(65, 209, 235); margin-top: 5px;" class="close">Sign Out</button></center>
+</body>
+
+</html>

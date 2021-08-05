@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    body {
+        background-image: url({% static 'images/login.jpg' %});
+        font-family: cursive;
+        color: antiquewhite;
+    }
+    </style>
+</head>
+<body>
+<center><form action="" method="POST" novalidate>
+    {% csrf_token %}
+    {% if form.non_field_errors %}
+    {% for error in form.non_field_errors %}
+        <p class="er">{{error}}</p>
+        {% endfor %}
+    {% endif %}
+    <h1></h1>
+    {% for fm in form %}
+        {{fm.label_tag}} {{fm}} {{fm.errors|striptags}} <br><br>
+    {% endfor %}
+    <input type="submit" value="Login">
+</form></center>
+<center><a href="{% url 'signup' %}">Signup</a></center>
+</body>
+</html>
